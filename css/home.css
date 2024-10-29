@@ -473,188 +473,160 @@ p {
 /* aqui empieza las habilidades el segundo scroll*/
 
 .habilidades {
-    display: flex;
-    height: 50%;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    margin-top: 8vw; 
+  display: flex;
+  height: 50%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  margin-top: 8vw; 
 }
-/* boton de sills */ 
+
+/* Botón de skills */
 .skills {
-    width: 55vw;
-    display: flex;
-    bottom: 10vw;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background: #1b1853;
-    font-family: "robot";
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    cursor: pointer;
-    border: none;
-    animation: pulse 1.5s ease-in-out infinite; /* Agregar animación automática */
+  width: 55vw;
+  display: flex;
+  bottom: 10vw;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #1b1853;
+  font-family: "robot";
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 .skills:after {
-    content: " ";
-    width: 0%;
-    height: 100%;
-    background: #f701ff;
-    position: absolute;
-    transition: all 0.4s ease-in-out;
-    right: 0;
-    animation: expand 8s linear infinite;
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #f701ff;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+  animation: expand 8s linear infinite;
 }
 
 .skills:hover::after {
-    right: auto;
-    left: 0;
-    width: 100%;
+  right: auto;
+  left: 0;
+  width: 100%;
 }
 
 .skills span {
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-    padding: 18px 25px;
-    color: #fff;
-    font-size: 1.125em;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    z-index: 20;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
 }
 
 /* Nueva animación aplicada automáticamente */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.95);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(0.95);
+  }
+  100% {
+      transform: scale(1);
+  }
 }
+
 @keyframes expand {
-    0% {
-        width: 0%;
-        left: 0;
-        opacity: 0; 
-    }
-    30% {
-        width: 100%;
-        left: 0; 
-        opacity: 1; 
-    }
-    50% {
-        left: 5%; 
-    }
-    70% {
-        left: -5%; 
-    }
-    100% {
-        width: 0%;
-        left: 0;
-        opacity: 0;
-    }
-}
-  
-  .contenedorHabilidades {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin: 0 0 20px 0;
-    transform: translateY(-40px); /* Valor ajustado para subir menos */
+  0% {
+      width: 0%;
+      left: 0;
+      opacity: 0; 
+  }
+  30% {
+      width: 100%;
+      left: 0; 
+      opacity: 1; 
+  }
+  50% {
+      left: 5%; 
+  }
+  70% {
+      left: -5%; 
+  }
+  100% {
+      width: 0%;
+      left: 0;
+      opacity: 0;
+  }
 }
 
-/* estas son las tarjetas para las habilidades */ 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Comienza desplazado hacia abajo */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* Termina en su posición original */
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0; /* Comienza completamente transparente */
-        transform: translateY(20px); /* Desplazamiento inicial hacia abajo */
-    }
-    to {
-        opacity: 1; /* Termina completamente visible */
-        transform: translateY(0); /* Vuelve a su posición original */
-    }
+.contenedorHabilidades {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 0 20px 0;
+  transform: translateY(-40px);
 }
 
 .cards {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 }
 
 .cards .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    height: 100px;
-    width: 250px;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    transition: transform 400ms, filter 400ms; /* Transiciones para el hover */
-    opacity: 0; /* Inicialmente invisibles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100px;
+  width: 250px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 400ms, filter 400ms;
+  opacity: 1; /* Hacer las tarjetas visibles desde el inicio */
 }
 
 .cards .red {
-    background-color: #430db9;
+  background-color: #430db9;
 }
 
 .cards .blue {
-    background-color: #6af63b;
+  background-color: #6af63b;
 }
 
 .cards .green {
-    background-color: #97c522;
+  background-color: #97c522;
 }
 
 .cards .card p.tip {
-    font-size: 1em;
-    font-weight: 700;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 .cards .card p.second-text {
-    font-size: .7em;
+  font-size: .7em;
 }
 
 .cards .card:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .cards:hover > .card:not(:hover) {
-    filter: blur(5px);
-    transform: scale(0.9);
+  filter: blur(5px);
+  transform: scale(0.9);
 }
-
-/* Clase que se añadirá cuando la tarjeta entre en el viewport */
-.card.visible {
-    opacity: 1;
-    animation: fadeInUp 2s forwards; 
-}
-
 
 /* aqui empiezo con el div de mision y vision */
 .MisionVision {
@@ -680,7 +652,6 @@ p {
     justify-content: center;
     overflow: hidden;
     perspective: 1000px;
-    transition: all 3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Aumenta la duración */
     position: relative;
   }
   
