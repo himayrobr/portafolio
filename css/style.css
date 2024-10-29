@@ -1,0 +1,136 @@
+@import url(../css/variable.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Container styling */
+html, body {
+    height: 100%;
+    background-color: black;
+    user-select: none;
+    animation: backgroundAnimation 1s;
+    overflow-x: hidden;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-color: black; 
+    } 
+    25% {
+        background-color: #25014b; 
+    }
+    50% {
+        background-color: #25014b; 
+    }
+    100% {
+        background-color: black; /* Color final */
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center; 
+    height: 100%; 
+    text-align: center; /* Alinea el texto al centro */
+}
+
+/* Button styling */
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Button styles */
+.button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.748);
+    --animation-color: #8a28f3;
+    --fs-size: 5em; 
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial", sans-serif;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* Hover text styling */
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* Hover effect */
+.button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+/* Styling for the paragraph */
+.parrafo {
+    font-family: "cursive";
+    color: white;
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .button {
+        --fs-size: 4em; /* Tamaño de fuente más pequeño en tablets y móviles */
+    }
+
+    .parrafo {
+        font-size: 30px; /* Tamaño de fuente más pequeño en tablets y móviles */
+        letter-spacing: 5px; /* Menos espaciado en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        --fs-size: 3em; /* Tamaño de fuente aún más pequeño en móviles */
+    }
+
+    .parrafo {
+        font-size: 24px; /* Tamaño de fuente más pequeño en móviles */
+        letter-spacing: 3px; /* Espaciado reducido */
+    }
+}
+
+section {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+	height: 350vw;
+    width: 100%;
+}
+.panel-1 {
+    height: 100%;
+    background:#423E3B;  
+}
+.panel-2 {
+    height: 100%;
+    background:#88498F;
+}
+h1 {
+    font-size:4rem;
+}

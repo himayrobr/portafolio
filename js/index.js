@@ -1,33 +1,59 @@
-// Obtener el icono del menú y el menú desplegable
-const menuIcon = document.getElementById('menu-icon');
-const dropdownMenu = document.getElementById('dropdown-menu');
-
-// Mostrar/ocultar el menú cuando se hace clic en el icono
-menuIcon.addEventListener('click', function() {
-    // Alternar el estilo de display entre 'block' y 'none'
-    if (dropdownMenu.style.display === 'block') {
-        dropdownMenu.style.display = 'none';
-    } else {
-        dropdownMenu.style.display = 'block';
-    }
-});
-
-// Ocultar el menú si se hace clic fuera de él
-document.addEventListener('click', function(event) {
-    // Verificar si el clic ocurrió fuera del icono del menú o el menú desplegable
-    if (!menuIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
-        dropdownMenu.style.display = 'none';
-    }
-});
-
-// Cambiar el estilo del encabezado cuando la ventana se desplaza
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("animatedButton");
+    const hoverText = button.querySelector(".hover-text");
     
-    // Si el desplazamiento vertical es mayor a 50px, añadir la clase 'scrolled' para cambiar el borde
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    // Función para iniciar la animación
+    function animateButton() {
+        hoverText.style.width = '100%'; 
+        hoverText.style.filter = 'drop-shadow(0 0 23px #8a28f3)'; 
     }
+
+    animateButton();
+        
+    setTimeout(() => {
+        window.location.href = "../views/home.html"; 
+    }, 3500); 
+});
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+const container = document.querySelector(".container");
+const colors = [
+    "#FF4D80",
+    "#FF3E41",
+    "#DF367C",
+    "#883955",
+    "#4C3549",
+    "#88498F",
+    "#423E3B",
+];
+
+let panelCreated = false;
+let panelNum = 3;
+
+const createPanel = (index) => {
+    const section = document.createElement("section");
+    const h1 = document.createElement("h1");
+    container.appendChild(section);
+    section.appendChild(h1);
+    h1.innerHTML = `Panel ${index}`;
+    gsap.set(section, {
+        backgroundColor: colors[gsap.utils.random(0, colors.length-1, 1)],
+        className: `panel-${index}`
+    }); 
+};
+
+ScrollTrigger.create({
+    trigger: document.body,
+    start: "top top",
+    end: "bottom bottom",
+    onUpdate: (self) => {
+        let progress = self.progress.toFixed(2);
+        if (progress >= 0.9 && self.direction === 1) {
+            createPanel(panelNum++);
+            ScrollTrigger.refresh();
+        }
+    },
 });
