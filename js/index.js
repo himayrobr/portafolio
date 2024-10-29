@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     animateButton();
         
     setTimeout(() => {
-        window.location.href = "../views/home.html"; 
+        window.location.href = "./views/home.html"; 
     }, 3500); 
 });
 
